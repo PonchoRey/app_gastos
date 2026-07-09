@@ -1,0 +1,259 @@
+/* ==========================================================================
+   Base Styles & Variables (app_utilidades style)
+   ========================================================================== */
+:root {
+  /* Default: Dark Theme (Teams inspired) */
+  --bg-color: #201F1F;
+  --bg-surface: #292929;
+  --bg-surface-hover: #3D3D3D;
+  --text-primary: #FFFFFF;
+  --text-secondary: #D1D1D1;
+  --primary-accent: #5B5FC7; /* Teams Blurple */
+  --primary-accent-hover: #4F52B2;
+  --danger-accent: #C4314B;
+  --success-accent: #13A10E;
+  --header-height: 60px;
+  --bottom-nav-height: 70px;
+  --nav-bg: rgba(32, 31, 31, 0.85);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --app-transition: all 0.3s ease;
+  
+  /* Nuevos tokens para historial y UI profesional */
+  --bg-table: #141414;
+  --bg-table-row-even: #1d1e1f;
+  --bg-table-row-odd: #141414;
+  --bg-table-header: #1d1e1f;
+  --border-table: #363637;
+  --text-table-header: #A3A6AD;
+  --text-table-body: #E5EAF3;
+  --accent-warning: #E6A23C;
+  --accent-danger-light: #F56C6C;
+  --accent-success-light: #67C23A;
+}
+
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--header-height);
+  padding-bottom: calc(var(--bottom-nav-height) + 35px); /* Espacio extra para el nav más alto */
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+.bg-primary-dark {
+  background-color: var(--nav-bg) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.app-header {
+  height: var(--header-height);
+}
+
+.app-bottom-nav {
+  height: calc(var(--bottom-nav-height) + 15px); /* Aumentado para dar espacio abajo */
+  padding-bottom: 15px; /* Empuja los botones hacia arriba */
+  border-top: 1px solid var(--border-color);
+  border-bottom: none;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-nav {
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background: transparent;
+  padding: 0.5rem;
+  transition: var(--app-transition);
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.btn-nav:hover, .btn-nav:focus {
+  color: var(--text-primary);
+}
+
+.btn-nav.active {
+  color: var(--text-primary);
+}
+
+.btn-nav.active .nav-icon {
+  background-color: var(--primary-accent);
+  color: white;
+  border-radius: 12px;
+  padding: 2px 12px;
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+  margin-bottom: 2px;
+  transition: var(--app-transition);
+}
+
+/* FAB Button for Bottom Nav */
+.btn-nav-fab {
+  position: relative;
+  top: -15px;
+}
+
+.btn-nav-fab .nav-icon {
+  background-color: var(--primary-accent);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 10px rgba(91, 95, 199, 0.4);
+}
+
+.btn-nav-fab.active .nav-icon {
+  background-color: var(--primary-accent-hover);
+  padding: 0;
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   Components (Cards, Buttons, Inputs)
+   ========================================================================== */
+.card-premium {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-premium:active {
+  transform: scale(0.98);
+}
+
+.list-group-item {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  border-radius: 10px;
+}
+
+.form-label {
+  color: var(--text-secondary) !important;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.form-control, .form-select {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  transition: var(--app-transition);
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 0.25rem rgba(91, 95, 199, 0.25);
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+/* Table Classes */
+.table-custom-row {
+  transition: background-color 0.2s ease;
+}
+.table-custom-row:hover {
+  background-color: var(--bg-surface-hover) !important;
+}
+
+/* Card Hover Animation */
+.card-premium {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+/* Primary Button Overrides */
+.btn-primary {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  color: #FFF;
+  border-radius: 8px;
+  transition: var(--app-transition);
+}
+.btn-primary:hover {
+  background-color: var(--primary-accent-hover);
+  border-color: var(--primary-accent-hover);
+}
+
+.btn-secondary {
+  background-color: var(--bg-surface-hover);
+  border-color: var(--bg-surface-hover);
+  color: var(--text-primary);
+  border-radius: 8px;
+  transition: var(--app-transition);
+}
+.btn-secondary:hover {
+  background-color: var(--border-color);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Utilities & Animations
+   ========================================================================== */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.category-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.modal-content {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+.modal-header {
+  border-bottom: 1px solid var(--border-color);
+}
+.modal-footer {
+  border-top: 1px solid var(--border-color);
+}

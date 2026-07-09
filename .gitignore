@@ -1,0 +1,10 @@
+node_modules/
+dist/
+android_old_225312/
+node_modules_broken/
+.DS_Store
+*.env
+*.log
+.agents/
+*.jks
+*.keystore
