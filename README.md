@@ -17,3 +17,9 @@ El proyecto sigue una estructura **MVC (Modelo-Vista-Controlador)** modificada:
 *   `src/js/views/`: Manipulación directa del DOM y enlazado (binding) de eventos.
 *   `src/js/controllers/`: Lógica de negocio que conecta Vistas y Modelos.
 *   `src/js/app.js`: Punto de entrada que inicializa el enrutador de secciones, la base de datos y los controladores.
+
+##  Capturas.
+
+![Capturas](capturas/conf.jpg)
+
+![Capturas](capturas/dashboard.jpg) 
