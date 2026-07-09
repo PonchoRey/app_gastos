@@ -17,37 +17,3 @@ El proyecto sigue una estructura **MVC (Modelo-Vista-Controlador)** modificada:
 *   `src/js/views/`: Manipulación directa del DOM y enlazado (binding) de eventos.
 *   `src/js/controllers/`: Lógica de negocio que conecta Vistas y Modelos.
 *   `src/js/app.js`: Punto de entrada que inicializa el enrutador de secciones, la base de datos y los controladores.
-
-## 🚀 Compilación e Instalación (Android APK)
-
-Este proyecto está configurado para empaquetarse como un archivo APK para dispositivos Android utilizando el entorno local.
-
-### Requisitos Previos
-*   [Node.js](https://nodejs.org/)
-*   [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-*   [Android SDK](https://developer.android.com/studio)
-
-### Pasos para compilar en entorno Windows (Terminal PowerShell)
-
-1.  **Configurar Variables de Entorno:**
-    ```powershell
-    $env:JAVA_HOME = "C:\ruta\a\tu\jdk-17"
-    $env:ANDROID_HOME = "C:\ruta\a\tu\android-sdk"
-    ```
-2.  **Instalar dependencias y sincronizar Capacitor:**
-    ```powershell
-    npm install
-    npm run build
-    npx cap sync android
-    ```
-3.  **Generar el archivo APK:**
-    ```powershell
-    cd android
-    ./gradlew assembleDebug
-    ```
-    El archivo APK final lo encontrarás en la ruta: `android/app/build/outputs/apk/debug/app-debug.apk`.
-
-## 🔒 Privacidad y Seguridad
-
-*   **Claves de IA (API Keys):** Las llaves proporcionadas por el usuario para los servicios de transcripción o IA se almacenan estrictamente de forma local en el dispositivo (`localStorage`). 
-*   **Repositorio Público:** Este código abierto no contiene llaves privadas (`*.jks`, `*.keystore`) ni credenciales duras.
